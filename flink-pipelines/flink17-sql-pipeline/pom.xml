@@ -11,8 +11,12 @@
     <artifactId>flink17-sql-pipeline</artifactId>
 
     <properties>
-
+        <flink.version>1.17.1</flink.version>
+        <hadoop.version>3.3.0</hadoop.version>
+        <hive.version>2.1.0</hive.version>
+        <flink.cdc.version>2.4.0</flink.cdc.version>
     </properties>
+
     <dependencies>
 
     </dependencies>

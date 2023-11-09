@@ -9,6 +9,8 @@
 
     <properties>
         <java.version>11</java.version>
+        <scala.version>2.12.12</scala.version>
+        <scala.binary.version>2.12</scala.binary.version>
         <spring-boot.version>2.7.6</spring-boot.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
@@ -29,6 +31,21 @@
         <hippo4j-threadpool-config-mode.version>1.5.0</hippo4j-threadpool-config-mode.version>
         <micrometer-registry-prometheus.version>1.10.6</micrometer-registry-prometheus.version>
     </properties>
+
+    <repositories> <!-- 阿里云仓库配置 -->
+        <repository>
+            <id>maven-ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
