@@ -85,6 +85,7 @@ public class DataWithLatenessPipeline {
                     }
                 });
 
+
         /*******************  sink  ****************/
         result.print();
 
