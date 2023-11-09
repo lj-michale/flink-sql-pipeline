@@ -13,6 +13,7 @@
 
     <modules>
         <module>turing-common-springboot-starter</module>
+        <module>turing-base-springboot-starter</module>
     </modules>
 
     <dependencies>
