@@ -8,15 +8,22 @@
         <version>1.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>flink-pipelines</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>flink17-sql-pipeline</artifactId>
 
-    <modules>
-        <module>flink17-sql-pipeline</module>
-    </modules>
+    <properties>
 
+    </properties>
     <dependencies>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
