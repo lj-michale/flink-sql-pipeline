@@ -11,6 +11,7 @@
         <module>flink-dependencies</module>
         <module>flink-pipelines</module>
         <module>flink-frameworks</module>
+        <module>flink-tests</module>
     </modules>
 
     <properties>
