@@ -58,17 +58,21 @@ public class DataWithLatenessPipeline {
                 );
 
         // 配置窗口, 滚动窗口, 长度5秒
-        WindowedStream<Tuple2<String, Long>, Tuple, TimeWindow> windowedStream = watermarks.keyBy(0)
-                .window(TumblingEventTimeWindows.of(Time.seconds(5)));
+        WindowedStream<Tuple2<String, Long>, Tuple, TimeWindow> windowedStream =
+                watermarks.keyBy(0)
+                        .window(TumblingEventTimeWindows.of(Time.seconds(5)));
 
         // 增加窗口对长期延迟数据的处理
-        WindowedStream<Tuple2<String, Long>, Tuple, TimeWindow> windowedStreamWithLateness = windowedStream
-                .allowedLateness(Time.seconds(2));
+        WindowedStream<Tuple2<String, Long>, Tuple, TimeWindow> windowedStreamWithLateness =
+                windowedStream.allowedLateness(Time.seconds(2));
 
         SingleOutputStreamOperator<Tuple2<String, Integer>> result = windowedStreamWithLateness
                 .apply(new WindowFunction<Tuple2<String, Long>, Tuple2<String, Integer>, Tuple, TimeWindow>() {
                     @Override
-                    public void apply(Tuple tuple, TimeWindow window, Iterable<Tuple2<String, Long>> input, Collector<Tuple2<String, Integer>> out) throws Exception {
+                    public void apply(Tuple tuple,
+                                      TimeWindow window,
+                                      Iterable<Tuple2<String, Long>> input,
+                                      Collector<Tuple2<String, Integer>> out) throws Exception {
                         String key = null;
                         int count = 0;
                         for (Tuple2<String, Long> ele : input) {
