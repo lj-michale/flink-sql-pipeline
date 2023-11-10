@@ -24,13 +24,15 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @descri: 汽车超速有状态实时检测|累加超速次数
+ *          Java版本不同，反射出错 -> 在Idea中指定如下的VM Options：
+ *          --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED
  *
  * @author: lj.michale
  * @date: 2023/11/10 15:09
  */
 public class OverspeedDetectionWIthStatePipeline {
 
-    private static final Logger logger = LoggerFactory.getLogger(FlinkPipelineExample001.class);
+    private static final Logger logger = LoggerFactory.getLogger(OverspeedDetectionWIthStatePipeline.class);
 
     public static void main(String[] args) throws Exception {
 
@@ -52,6 +54,8 @@ public class OverspeedDetectionWIthStatePipeline {
         DataStreamSource<CarLog> darLogSourceTwo = flinkEnv.env().addSource(carSpeedSource1ps);
 
         DataStream<CarLog> darLogSource = darLogSourceOne.union(darLogSourceTwo);
+        darLogSource.print("darLogSource===============>>>");
+
         // 车速超速检测
         SingleOutputStreamOperator<Object> darLogDS = darLogSource
                 .keyBy(new KeySelector<CarLog, Object>() {
@@ -94,9 +98,9 @@ public class OverspeedDetectionWIthStatePipeline {
                 });
 
 
-        darLogDS.print("darLogDS=>>>");
+        darLogDS.print("darLogDS===============>>>");
 
-        flinkEnv.env().execute("FlinkPipelineExample002");
+        flinkEnv.env().execute("OverspeedDetectionWIthStatePipeline");
 
     }
 }
