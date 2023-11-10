@@ -16,19 +16,19 @@ import java.io.InputStream;
 
 
 /**
- * @descri:
+ * @descri: 汽车超速无状态实时检测
  *
  * @author: lj.michale
  * @date: 2023/11/10 15:09
  */
-public class FlinkPipelineExample002 {
+public class OverspeedDetectionWIthoutStatePipeline {
 
-    private static final Logger logger = LoggerFactory.getLogger(FlinkPipelineExample001.class);
+    private static final Logger logger = LoggerFactory.getLogger(OverspeedDetectionWIthoutStatePipeline.class);
 
     public static void main(String[] args) throws Exception {
 
         final String fileName = "application-dev.properties";
-        InputStream inputStream = FlinkPipelineExample001.class.getClassLoader().getResourceAsStream(fileName);
+        InputStream inputStream = OverspeedDetectionWIthoutStatePipeline.class.getClassLoader().getResourceAsStream(fileName);
         ParameterTool parameterTool = ParameterTool.fromPropertiesFile(inputStream);
         int parallelisNum = Integer.valueOf(parameterTool.get("flink.pipeline.parallelism","1"));
         String checkpointPath = parameterTool.get("flink.pipeline.checkpoint.url");
@@ -50,7 +50,7 @@ public class FlinkPipelineExample002 {
 
         overspeedLog.addSink(new CarOverspeedSink());
 
-        flinkEnv.env().execute("FlinkPipelineExample002");
+        flinkEnv.env().execute("OverspeedDetectionWIthoutStatePipeline");
 
     }
 }
