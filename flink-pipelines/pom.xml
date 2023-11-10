@@ -13,6 +13,7 @@
 
     <modules>
         <module>flink17-sql-pipeline</module>
+        <module>flink18-sql-pipeline</module>
     </modules>
 
     <dependencies>
