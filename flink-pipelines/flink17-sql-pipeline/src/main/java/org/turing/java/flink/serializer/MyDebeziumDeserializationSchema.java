@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.turing.java.flink.pipeline.FlinkPipelineExample001;
 
 /**
- * @descri: 自定义序列化类
+ * @descri: Mysql CDC 自定义序列化类
  *
  * @author: lj.michale
  * @date: 2023/11/10 17:42
@@ -21,10 +21,10 @@ public class MyDebeziumDeserializationSchema implements DebeziumDeserializationS
 
     private static final Logger logger = LoggerFactory.getLogger(FlinkPipelineExample001.class);
 
-    public static final String CREATE = "C";
-    public static final String DELETE = "D";
-    public static final String UPDATE = "U";
-    public static final String READ = "R";
+    public static final String CREATE = "c";
+    public static final String DELETE = "d";
+    public static final String UPDATE = "u";
+    public static final String READ = "r";
 
     @Override
     public void deserialize(SourceRecord sourceRecord,
@@ -57,29 +57,30 @@ public class MyDebeziumDeserializationSchema implements DebeziumDeserializationS
     }
 
     private Struct updateData(Struct value) {
-        logger.info("数据|修改操作");
+        logger.info(" 数据|修改操作");
 
         Struct beforeData = (Struct) value.get("before");
         Struct afterData = (Struct) value.get("after");
-        logger.info("修改之前数据before:{}", beforeData.toString());
-        logger.info("修改之后数据afterData:{}", afterData.toString());
+        logger.info("修改之前的数据:{} ", beforeData.toString());
+        logger.info("修改之后的数据:{} ", afterData.toString());
 
         return afterData;
     }
 
     private Struct deleteData(Struct value) {
-        System.out.println("数据|删除");
+        logger.info("数据|删除");
         Struct beforeData = (Struct) value.get("before");
-        System.out.println("before:" + beforeData.toString());
+        logger.info("删除数据:{} ", beforeData.toString());
 
         return beforeData;
     }
 
     private Struct createData(Struct value) {
-        System.out.println("数据|增加");
+        logger.info("数据|增加");
         Struct afterData = (Struct) value.get("after");
-        System.out.println("afterData:" + afterData.toString());
+        logger.info("增加数据:{} ", afterData.toString());
 
         return afterData;
     }
+
 }
