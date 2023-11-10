@@ -9,7 +9,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <scala.version>2.12.12</scala.version>
+        <scala.version>2.12.18</scala.version>
         <scala.binary.version>2.12</scala.binary.version>
         <spring-boot.version>2.7.6</spring-boot.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
