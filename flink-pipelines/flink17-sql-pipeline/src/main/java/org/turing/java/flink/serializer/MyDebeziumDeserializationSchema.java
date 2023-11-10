@@ -7,19 +7,24 @@ import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.util.Collector;
 import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.source.SourceRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.turing.java.flink.pipeline.FlinkPipelineExample001;
 
 /**
- * @descri: 
+ * @descri: 自定义序列化类
  *
  * @author: lj.michale
  * @date: 2023/11/10 17:42
  */
 public class MyDebeziumDeserializationSchema implements DebeziumDeserializationSchema {
 
-    public static final String CREATE = "c";
-    public static final String DELETE = "d";
-    public static final String UPDATE = "u";
-    public static final String READ = "r";
+    private static final Logger logger = LoggerFactory.getLogger(FlinkPipelineExample001.class);
+
+    public static final String CREATE = "C";
+    public static final String DELETE = "D";
+    public static final String UPDATE = "U";
+    public static final String READ = "R";
 
     @Override
     public void deserialize(SourceRecord sourceRecord,
@@ -52,17 +57,18 @@ public class MyDebeziumDeserializationSchema implements DebeziumDeserializationS
     }
 
     private Struct updateData(Struct value) {
-        System.out.println("修改");
+        logger.info("数据|修改操作");
+
         Struct beforeData = (Struct) value.get("before");
-        System.out.println("修改之前数据before:" + beforeData.toString());
         Struct afterData = (Struct) value.get("after");
-        System.out.println("修改之后数据afterData:" + afterData.toString());
+        logger.info("修改之前数据before:{}", beforeData.toString());
+        logger.info("修改之后数据afterData:{}", afterData.toString());
 
         return afterData;
     }
 
     private Struct deleteData(Struct value) {
-        System.out.println("删除");
+        System.out.println("数据|删除");
         Struct beforeData = (Struct) value.get("before");
         System.out.println("before:" + beforeData.toString());
 
@@ -70,7 +76,7 @@ public class MyDebeziumDeserializationSchema implements DebeziumDeserializationS
     }
 
     private Struct createData(Struct value) {
-        System.out.println("增加");
+        System.out.println("数据|增加");
         Struct afterData = (Struct) value.get("after");
         System.out.println("afterData:" + afterData.toString());
 
