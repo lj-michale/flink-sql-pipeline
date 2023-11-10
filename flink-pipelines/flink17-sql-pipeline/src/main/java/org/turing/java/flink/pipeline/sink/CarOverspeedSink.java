@@ -13,7 +13,8 @@ import java.text.SimpleDateFormat;
 public class CarOverspeedSink implements SinkFunction<CarLog> {
     @Override
     public void invoke(CarLog value, Context context) throws Exception {
-        System.out.println(value.getCarCode() + "于" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(value.getLogTime())) + " 超速。速度:" + value.getSpeed() + "km/h");
+        System.out.println(value.getCarCode() + "于" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                .format(new Date(value.getLogTime())) + " 超速。速度:" + value.getSpeed() + "km/h");
     }
 
 }
