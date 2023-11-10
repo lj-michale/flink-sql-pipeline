@@ -3,10 +3,13 @@ package org.turing.java.flink.pipeline;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.contrib.streaming.state.EmbeddedRocksDBStateBackend;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.turing.java.flink.bean.CarLog;
 import org.turing.java.flink.common.utils.FlinkEnvUtils;
+import org.turing.java.flink.pipeline.function.CarOverspeedFilter;
+import org.turing.java.flink.pipeline.sink.CarOverspeedSink;
 import org.turing.java.flink.pipeline.sourcce.CarSpeedSource1ps;
 
 import java.io.InputStream;
@@ -39,8 +42,13 @@ public class FlinkPipelineExample002 {
 
         CarSpeedSource1ps carSpeedSource1ps = new CarSpeedSource1ps();
         DataStreamSource<CarLog> darLogSource = flinkEnv.env().addSource(carSpeedSource1ps);
+//        darLogSource.print();
 
-        darLogSource.print();
+        // 车速超速检测
+        SingleOutputStreamOperator<CarLog> overspeedLog = darLogSource
+                .filter(new CarOverspeedFilter());
+
+        overspeedLog.addSink(new CarOverspeedSink());
 
         flinkEnv.env().execute("FlinkPipelineExample002");
 
