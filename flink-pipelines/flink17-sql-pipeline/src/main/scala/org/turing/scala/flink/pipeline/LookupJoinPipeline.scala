@@ -93,4 +93,5 @@ object LookupJoinPipeline {
     tEnv.executeSql(joinSQL)
 
   }
+
 }
