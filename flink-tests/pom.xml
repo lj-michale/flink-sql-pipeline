@@ -9,6 +9,11 @@
     </parent>
 
     <artifactId>flink-tests</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>flink-data-generator</module>
+    </modules>
 
     <dependencies>
 
