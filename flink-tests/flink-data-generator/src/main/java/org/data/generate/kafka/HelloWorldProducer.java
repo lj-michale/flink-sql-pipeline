@@ -13,6 +13,7 @@ import java.util.Random;
  * @date: 2023/11/14 18:13
  */
 public class HelloWorldProducer {
+
     public static void main(String[] args) {
 
         long events = 30;
