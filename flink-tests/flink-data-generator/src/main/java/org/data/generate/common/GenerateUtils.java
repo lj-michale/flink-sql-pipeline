@@ -71,7 +71,7 @@ public class GenerateUtils {
      * 获取当前系统时间
      *
      */
-    public static String getCuurrentTime() {
+    public static String getCurrentTime() {
         long currentTime = SystemClock.now();
         String strCurrentTime = sdf.format(currentTime);
 
@@ -168,7 +168,7 @@ public class GenerateUtils {
 
     public static void main(String[] args) {
 
-        System.out.println(getCuurrentTime());
+        System.out.println(getCurrentTime());
 
     }
 

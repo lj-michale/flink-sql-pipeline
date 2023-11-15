@@ -188,7 +188,7 @@ public class TuringKafkaProducer extends Thread {
                         "        \"user_id\":" + generateRandomUserId() + ",\n" +
                         "        \"coupon_id\":2,\n" +
                         "        \"order_sn\":\"201809150101000001\",\n" +
-                        "        \"create_time\":\"" + getCuurrentTime() + "\",\n" +
+                        "        \"create_time\":\"" + getCurrentTime() + "\",\n" +
                         "        \"user_name\":\"" + generateRandomUserName() + "\",\n" +
                         "        \"total_amount\":\"" + getRandomRedPacketBetweenMinAndMax(minNum, maxNum) + "\",\n" +
                         "        \"pay_amount\":\"" + getRandomRedPacketBetweenMinAndMax(minNum, maxNum) + "\",\n" +
