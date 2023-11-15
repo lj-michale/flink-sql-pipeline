@@ -267,4 +267,5 @@ public class TuringKafkaProducer extends Thread {
         new TuringKafkaProducer("kafeidou").run();
     }
 
+
 }
