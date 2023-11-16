@@ -15,6 +15,7 @@
         <module>turing-common-springboot-starter</module>
         <module>turing-base-springboot-starter</module>
         <module>turing-convention-springboot-starter</module>
+        <module>turing-designpattern-springboot-starter</module>
     </modules>
 
     <dependencies>
