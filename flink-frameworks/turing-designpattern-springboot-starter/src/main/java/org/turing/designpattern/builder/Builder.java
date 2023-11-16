@@ -1,4 +1,4 @@
-package org.turing.designpattern;
+package org.turing.designpattern.builder;
 
 import java.io.Serializable;
 

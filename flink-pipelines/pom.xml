@@ -16,8 +16,5 @@
         <module>flink18-sql-pipeline</module>
     </modules>
 
-    <dependencies>
-
-    </dependencies>
 
 </project>

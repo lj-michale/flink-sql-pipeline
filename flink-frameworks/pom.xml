@@ -18,8 +18,4 @@
         <module>turing-designpattern-springboot-starter</module>
     </modules>
 
-    <dependencies>
-
-    </dependencies>
-
 </project>

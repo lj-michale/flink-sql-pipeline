@@ -34,6 +34,11 @@
             <artifactId>turing-convention-springboot-starter</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.turing.bigdata</groupId>
+            <artifactId>turing-designpattern-springboot-starter</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

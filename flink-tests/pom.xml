@@ -15,10 +15,4 @@
         <module>flink-data-generator</module>
     </modules>
 
-    <dependencies>
-
-    </dependencies>
-
-
-
 </project>
