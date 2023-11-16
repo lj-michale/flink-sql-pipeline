@@ -41,11 +41,11 @@ public class GenerateEcommerceTransaSimulatData extends Thread {
             try {
                 Producer<String, String> kafkaProducer = createProducer();
                 List<String> msgList = new ArrayList<String>();
-                String startTime = getCurrentTime();
 
                 //////////////////// 模拟数据 - 字段
                 String address = getProCity();
                 String date = Time();
+                String itime = getCurrentTime();
                 String phone = getTel();
                 String email = GetEmail();
                 //////////////////// 模拟数据 - 字段
@@ -57,7 +57,7 @@ public class GenerateEcommerceTransaSimulatData extends Thread {
                         "        \"msg_id\":\"58546795155875852\",\n" +
                         "        \"address\":\"" + address + "\",\n" +
                         "        \"sdk_type\":\"1\",\n" +
-                        "        \"itime\":\"" + date + "\",\n" +
+                        "        \"itime\":\"" + itime + "\",\n" +
                         "        \"phone\":\"" + phone + "\",\n" +
                         "        \"email\":\"" + email + "\",\n" +
                         "        \"app_key\":\"35faa0b054a629f4d75d6046\",\n" +
@@ -68,7 +68,6 @@ public class GenerateEcommerceTransaSimulatData extends Thread {
                         "}";
 
                 msgList.add(message);
-                String endTime = getCurrentTime();
 
                 Random random = new Random();
                 int i = random.nextInt(msgList.size());
