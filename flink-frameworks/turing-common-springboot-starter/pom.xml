@@ -24,6 +24,11 @@
             <artifactId>dozer-core</artifactId>
             <version>6.5.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.turing.bigdata</groupId>
+            <artifactId>turing-base-springboot-starter</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

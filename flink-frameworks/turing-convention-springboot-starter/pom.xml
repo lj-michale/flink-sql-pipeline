@@ -4,21 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.turing.bigdata</groupId>
-        <artifactId>flink-sql-pipeline</artifactId>
+        <artifactId>flink-frameworks</artifactId>
         <version>1.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>flink-frameworks</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>turing-common-springboot-starter</module>
-        <module>turing-base-springboot-starter</module>
-        <module>turing-convention-springboot-starter</module>
-    </modules>
-
-    <dependencies>
-
-    </dependencies>
+    <artifactId>turing-convention-springboot-starter</artifactId>
 
 </project>
