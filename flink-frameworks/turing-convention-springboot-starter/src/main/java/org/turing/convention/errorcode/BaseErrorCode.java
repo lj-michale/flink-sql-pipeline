@@ -1,6 +1,5 @@
 package org.turing.convention.errorcode;
 
-
 /**
  * @descri: 基础错误码定义
  *
