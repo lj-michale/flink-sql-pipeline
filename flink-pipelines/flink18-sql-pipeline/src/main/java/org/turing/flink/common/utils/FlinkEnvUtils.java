@@ -1,7 +1,5 @@
 package org.turing.flink.common.utils;
 
-import lombok.Builder;
-import lombok.Data;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.common.time.Time;
 import org.apache.flink.api.java.utils.ParameterTool;
@@ -18,12 +16,16 @@ import org.apache.flink.contrib.streaming.state.EmbeddedRocksDBStateBackend;
 import org.apache.flink.contrib.streaming.state.PredefinedOptions;
 import java.util.concurrent.TimeUnit;
 
+import lombok.Builder;
+import lombok.Data;
 /**
  * @descri flink1.18执行环境初始化
  *
  * @author lj.michale
  * @date 2023-11-07
  */
+@Builder
+@Data
 public class FlinkEnvUtils {
 
     /**
