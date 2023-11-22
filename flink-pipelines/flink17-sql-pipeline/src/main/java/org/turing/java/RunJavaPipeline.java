@@ -1,4 +1,4 @@
-package org.turing.java.flink;
+package org.turing.java;
 
 
 /**

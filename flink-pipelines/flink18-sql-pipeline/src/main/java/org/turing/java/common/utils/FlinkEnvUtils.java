@@ -1,4 +1,4 @@
-package org.turing.flink.common.utils;
+package org.turing.java.common.utils;
 
 import lombok.Builder;
 import lombok.Data;

@@ -7,7 +7,6 @@ import org.turing.scala.flink.pipeline.source.WordSource
 
 /**
  * @descri:
- *
  * @author: lj.michale
  * @date: 2023/11/10 17:04
  */

@@ -1,4 +1,4 @@
-package org.turing.flink.pipeline.function;
+package org.turing.java.pipeline.function;
 
 import org.apache.flink.api.common.functions.RichFlatMapFunction;
 import org.apache.flink.api.common.state.ValueState;

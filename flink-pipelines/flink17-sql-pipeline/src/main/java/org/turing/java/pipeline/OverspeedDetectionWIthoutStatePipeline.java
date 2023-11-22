@@ -1,4 +1,4 @@
-package org.turing.java.flink.pipeline;
+package org.turing.java.pipeline;
 
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.contrib.streaming.state.EmbeddedRocksDBStateBackend;
@@ -6,11 +6,11 @@ import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.turing.java.flink.bean.CarLog;
-import org.turing.java.flink.common.utils.FlinkEnvUtils;
-import org.turing.java.flink.pipeline.function.CarOverspeedFilter;
-import org.turing.java.flink.pipeline.sink.CarOverspeedSink;
-import org.turing.java.flink.pipeline.sourcce.CarSpeedSource1ps;
+import org.turing.java.bean.CarLog;
+import org.turing.java.common.utils.FlinkEnvUtils;
+import org.turing.java.pipeline.function.CarOverspeedFilter;
+import org.turing.java.pipeline.sink.CarOverspeedSink;
+import org.turing.java.pipeline.sourcce.CarSpeedSource1ps;
 
 import java.io.InputStream;
 

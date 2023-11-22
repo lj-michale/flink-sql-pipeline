@@ -1,4 +1,4 @@
-package org.turing.java.flink.pipeline;
+package org.turing.java.pipeline;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.utils.ParameterTool;
@@ -8,7 +8,7 @@ import org.apache.flink.types.Row;
 import org.apache.flink.util.Collector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.turing.java.flink.common.utils.FlinkEnvUtils;
+import org.turing.java.common.utils.FlinkEnvUtils;
 
 import java.io.InputStream;
 

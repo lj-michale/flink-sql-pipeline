@@ -1,4 +1,4 @@
-package org.turing.java.flink.cdc;
+package org.turing.java.cdc;
 
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
@@ -7,7 +7,7 @@ import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
 import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.turing.java.flink.serializer.MyDebeziumDeserializationSchema;
+import org.turing.java.serializer.MyDebeziumDeserializationSchema;
 
 /**
  * @descri: mysql cdc

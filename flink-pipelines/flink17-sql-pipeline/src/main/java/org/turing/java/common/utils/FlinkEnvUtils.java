@@ -1,4 +1,4 @@
-package org.turing.java.flink.common.utils;
+package org.turing.java.common.utils;
 
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +16,6 @@ import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.TableEnvironment;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**

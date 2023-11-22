@@ -1,7 +1,7 @@
-package org.turing.java.flink.pipeline.sourcce;
+package org.turing.java.pipeline.sourcce;
 
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
-import org.turing.java.flink.bean.CarLog;
+import org.turing.java.bean.CarLog;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

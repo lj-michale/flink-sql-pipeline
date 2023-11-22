@@ -1,4 +1,4 @@
-package org.turing.flink.pipeline;
+package org.turing.java.pipeline;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.utils.ParameterTool;
@@ -6,8 +6,8 @@ import org.apache.flink.contrib.streaming.state.EmbeddedRocksDBStateBackend;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.turing.flink.common.utils.FlinkEnvUtils;
-import org.turing.flink.pipeline.function.CountWindowAverage;
+import org.turing.java.common.utils.FlinkEnvUtils;
+import org.turing.java.pipeline.function.CountWindowAverage;
 
 import java.io.InputStream;
 

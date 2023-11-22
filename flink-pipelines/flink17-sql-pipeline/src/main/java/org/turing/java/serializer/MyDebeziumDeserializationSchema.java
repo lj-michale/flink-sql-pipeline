@@ -1,4 +1,4 @@
-package org.turing.java.flink.serializer;
+package org.turing.java.serializer;
 
 import com.alibaba.fastjson2.JSON;
 import com.ververica.cdc.debezium.DebeziumDeserializationSchema;
@@ -9,7 +9,7 @@ import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.turing.java.flink.pipeline.FlinkPipelineExample001;
+import org.turing.java.pipeline.FlinkPipelineExample001;
 
 /**
  * @descri: Mysql CDC 自定义序列化类

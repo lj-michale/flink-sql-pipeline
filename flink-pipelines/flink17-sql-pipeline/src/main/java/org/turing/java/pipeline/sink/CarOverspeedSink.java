@@ -1,7 +1,8 @@
-package org.turing.java.flink.pipeline.sink;
+package org.turing.java.pipeline.sink;
 
 import org.apache.flink.streaming.api.functions.sink.SinkFunction;
-import org.turing.java.flink.bean.CarLog;
+import org.turing.java.bean.CarLog;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 /**

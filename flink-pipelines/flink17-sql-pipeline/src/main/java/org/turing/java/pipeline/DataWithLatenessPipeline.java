@@ -1,4 +1,4 @@
-package org.turing.java.flink.pipeline;
+package org.turing.java.pipeline;
 
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;

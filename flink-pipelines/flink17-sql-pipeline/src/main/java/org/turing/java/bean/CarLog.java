@@ -1,4 +1,4 @@
-package org.turing.java.flink.bean;
+package org.turing.java.bean;
 
 
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
-package org.turing.java.flink.pipeline.function;
+package org.turing.java.pipeline.function;
 
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.turing.common.AbilityDescri;
-import org.turing.java.flink.bean.CarLog;
+import org.turing.java.bean.CarLog;
 
 /**
  * @descri: 车辆超速过滤
