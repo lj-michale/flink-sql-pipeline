@@ -16,11 +16,10 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
 import org.apache.flink.contrib.streaming.state.EmbeddedRocksDBStateBackend;
 import org.apache.flink.contrib.streaming.state.PredefinedOptions;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @descri flink1.17执行环境初始化
+ * @descri flink1.18执行环境初始化
  *
  * @author lj.michale
  * @date 2023-11-07
@@ -46,10 +45,6 @@ public class FlinkEnvUtils {
     public static void setEmbeddedRocksDBStateBackend(StreamExecutionEnvironment env) {
         setCheckpointConfig(env);
         EmbeddedRocksDBStateBackend embeddedRocksDBStateBackend = new EmbeddedRocksDBStateBackend();
-        // DEFAULT
-        //SPINING_DISK_OPTIMIZED
-        //SPINNING_DISK_OPTIMIZED_HIGH_MEM, 机械硬盘+内存模式
-        //FLASH_SSD_OPTIMIZED  (有条件使用ssd的可以使用这个选项)
         embeddedRocksDBStateBackend.setPredefinedOptions(PredefinedOptions.SPINNING_DISK_OPTIMIZED_HIGH_MEM);
         env.setStateBackend(embeddedRocksDBStateBackend);
     }
@@ -60,25 +55,15 @@ public class FlinkEnvUtils {
      * @param env env
      */
     public static void setCheckpointConfig(StreamExecutionEnvironment env) {
-        // 每1000ms开始一次checkpoint，这个就是触发JM的checkpoint-Coordinator的一个事件间隔设置
         env.enableCheckpointing(1000);
-        // 设置模式为精确一次 (这是默认值)
         env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
-        // 确认 checkpoints 之间的时间会进行 500 ms
         env.getCheckpointConfig().setMinPauseBetweenCheckpoints(500);
-        // Checkpoint 必须在一分钟内完成，否则就会被抛弃
         env.getCheckpointConfig().setCheckpointTimeout(60000);
-        // 允许两个连续的checkpoint错误
         env.getCheckpointConfig().setTolerableCheckpointFailureNumber(2);
-        // 同一时间只允许一个checkpoint进行
         env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
-        // 使用externalized checkpoints，这样checkpoint在作业取消后仍就会被保留
         env.getCheckpointConfig().setExternalizedCheckpointCleanup(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
-        // 不设置 StateBackend，即：读取 flink-conf.yaml 文件的配置
-        // env.setStateBackend(new EmbeddedRocksDBStateBackend());
-        // 作业失败重启设置
+
         env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, Time.of(10, TimeUnit.SECONDS)));
-        // 解决Failed to set setXIncludeAware(true) for parser报错
         System.setProperty("javax.xml.parsers.DocumentBuilderFactory", "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
         System.setProperty("javax.xml.parsers.SAXParserFactory", "com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl");
     }
@@ -95,7 +80,7 @@ public class FlinkEnvUtils {
         StreamExecutionEnvironment env =
                 StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(configuration);
         String stateBackend = parameterTool.get("state.backend", "rocksdb");
-        // 判断状态后端模式
+        /** 判断状态后端模式 */
         if ("hashmap".equals(stateBackend)) {
             setHashMapStateBackend(env);
         } else if ("rocksdb".equals(stateBackend)) {
@@ -188,4 +173,5 @@ public class FlinkEnvUtils {
             return this.streamExecutionEnvironment;
         }
     }
+
 }
