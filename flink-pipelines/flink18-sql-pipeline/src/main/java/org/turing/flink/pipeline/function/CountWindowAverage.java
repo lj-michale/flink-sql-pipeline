@@ -24,7 +24,6 @@ public class CountWindowAverage extends RichFlatMapFunction<Tuple2<Long, Long>, 
 
     @Override
     public void flatMap(Tuple2<Long, Long> input, Collector<Tuple2<Long, Long>> out) throws Exception {
-
         // access the state value
         Tuple2<Long, Long> currentSum = sum.value();
 
@@ -53,4 +52,5 @@ public class CountWindowAverage extends RichFlatMapFunction<Tuple2<Long, Long>, 
                         Tuple2.of(0L, 0L)); // default value of the state, if nothing was set
         sum = getRuntimeContext().getState(descriptor);
     }
+
 }
