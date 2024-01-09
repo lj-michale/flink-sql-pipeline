@@ -107,7 +107,7 @@
         <dependency>
             <groupId>org.apache.paimon</groupId>
             <artifactId>paimon-flink-1.17</artifactId>
-            <version>0.4.0-incubating</version>
+            <version>0.6.0-incubating</version>
         </dependency>
     </dependencies>
 
