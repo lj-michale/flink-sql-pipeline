@@ -83,4 +83,5 @@ public class FlinkFromKafka2Paimon {
         tableEnv.executeSql("INSERT INTO data_from_flink2paimon SELECT * FROM kafka_table");
 
     }
+
 }

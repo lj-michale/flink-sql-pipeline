@@ -20,6 +20,7 @@
         <module>flink-pipelines</module>
         <module>flink-frameworks</module>
         <module>flink-tests</module>
+        <module>spark-pipeline</module>
     </modules>
 
     <properties>
