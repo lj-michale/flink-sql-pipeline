@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.turing.bigdata
+package org.turing.common.utils
 
 import java.util
 

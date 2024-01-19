@@ -24,7 +24,7 @@ import org.apache.spark.sql.types.{DecimalType, LongType}
  * @author: lj.michale
  * @date: 2024/1/19 10:52
  */
-object Dwm2DwsJob {
+object HudiDwm2DwsJob {
 
   def main(args: Array[String]): Unit = {
 
@@ -92,5 +92,7 @@ object Dwm2DwsJob {
       .start(targetLocation2)
 
     spark.streams.awaitAnyTermination()
+
   }
+
 }
