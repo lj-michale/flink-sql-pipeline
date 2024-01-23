@@ -17,6 +17,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.turing.bigdata</groupId>
             <artifactId>turing-common-springboot-starter</artifactId>
             <version>1.0.1-SNAPSHOT</version>
