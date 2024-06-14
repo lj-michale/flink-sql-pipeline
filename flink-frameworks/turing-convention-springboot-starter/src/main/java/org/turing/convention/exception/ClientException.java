@@ -31,7 +31,7 @@ public class ClientException extends AbstractException {
     public String toString() {
         return "ClientException{" +
                 "code='" + errorCode + "'," +
-                "message='" + errorMessage + "'" +
+//                "message='" + errorMessage + "'" +
                 '}';
     }
 }

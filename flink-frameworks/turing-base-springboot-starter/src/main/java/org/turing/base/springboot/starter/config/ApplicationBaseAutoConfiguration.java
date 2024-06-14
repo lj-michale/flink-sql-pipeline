@@ -17,6 +17,7 @@
 
 package org.turing.base.springboot.starter.config;
 
+import org.springframework.context.annotation.Import;
 import org.turing.base.springboot.starter.ApplicationContextHolder;
 import org.turing.base.springboot.starter.init.ApplicationContentPostProcessor;
 import org.turing.base.springboot.starter.safe.FastJsonSafeMode;
@@ -26,7 +27,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @descri 应用基础自动装配
+ * @desc 应用基础自动装配
  */
 public class ApplicationBaseAutoConfiguration {
 

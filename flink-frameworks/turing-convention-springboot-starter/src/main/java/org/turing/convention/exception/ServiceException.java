@@ -33,7 +33,7 @@ public class ServiceException extends AbstractException {
     public String toString() {
         return "ServiceException{" +
                 "code='" + errorCode + "'," +
-                "message='" + errorMessage + "'" +
+//                "message='" + errorMessage + "'" +
                 '}';
     }
 }

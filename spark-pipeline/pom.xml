@@ -17,11 +17,6 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>org.turing.bigdata</groupId>
-			<artifactId>turing-common-springboot-starter</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
-		</dependency>
 
 	</dependencies>
 

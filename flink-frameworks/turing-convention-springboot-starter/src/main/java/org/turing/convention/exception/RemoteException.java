@@ -27,7 +27,7 @@ public class RemoteException extends AbstractException {
     public String toString() {
         return "RemoteException{" +
                 "code='" + errorCode + "'," +
-                "message='" + errorMessage + "'" +
+//                "message='" + errorMessage + "'" +
                 '}';
     }
 }

@@ -19,20 +19,15 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.turing.bigdata</groupId>
-            <artifactId>turing-common-springboot-starter</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>2.12.12</version>
+<!--            <scope>provided</scope>-->
         </dependency>
         <!--Spark 核心jar包-->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.12</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+<!--            <scope>provided</scope>-->
         </dependency>
         <!--Spark Streaming 核心jar-->
         <dependency>
@@ -46,17 +41,35 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.12</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+<!--            <scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_2.12</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <!-- 添加hive依赖 -->
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-exec</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>3.0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.paimon</groupId>
+            <artifactId>paimon-spark-3.3</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.paimon</groupId>
+            <artifactId>paimon-hive-connector-3.1</artifactId>
+            <version>0.8.0</version>
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
